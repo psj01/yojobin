@@ -1,0 +1,107 @@
+<html>
+   
+   <head>
+      <title>JavaScript Animation</title>
+      
+      <script type="text/javascript">
+         <!--
+            var imgObj = null;
+            var animate ;
+            
+            function init(){
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            
+            function moveRight(){
+			
+			if(parseInt(imgObj.style.left)<=200)
+			{clearTimeout(animate);
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+               animate = setTimeout(moveRight,50); // call moveRight in 20msec
+			}
+			else
+			{
+				moveLeft();
+			}
+			
+            }
+			
+			function moveLeft(){
+			if(parseInt(imgObj.style.left)>=0)
+			{
+			clearTimeout(animate);
+				imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';
+                animate = setTimeout(moveLeft,50); // call moveRight in 20msec
+			}
+			else{
+				moveRight();
+			}
+			}
+            
+            function stop(){
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+            
+            window.onload =init;
+			
+			
+			function getRandom() {
+				var x = Math.floor((Math.random() * 100) + 1);
+				return x;
+				}
+				
+				function handleClick(e){
+				 var evt = e ? e:window.event;
+				 var clickX=0, clickY=0;
+
+				 if ((evt.clientX || evt.clientY) &&
+					 document.body &&
+					 document.body.scrollLeft!=null) {
+				  clickX = evt.clientX + document.body.scrollLeft;
+				  clickY = evt.clientY + document.body.scrollTop;
+				 }
+				 if ((evt.clientX || evt.clientY) &&
+					 document.compatMode=='CSS1Compat' && 
+					 document.documentElement && 
+					 document.documentElement.scrollLeft!=null) {
+				  clickX = evt.clientX + document.documentElement.scrollLeft;
+				  clickY = evt.clientY + document.documentElement.scrollTop;
+				 }
+				 if (evt.pageX || evt.pageY) {
+				  clickX = evt.pageX;
+				  clickY = evt.pageY;
+				 }
+
+				 alert (evt.type.toUpperCase() + ' mouse event:'
+				  +'\n pageX = ' + clickX
+				  +'\n pageY = ' + clickY 
+				  +'\n clientX = ' + evt.clientX
+				  +'\n clientY = '  + evt.clientY 
+				  +'\n screenX = ' + evt.screenX 
+				  +'\n screenY = ' + evt.screenY
+				 )
+				 return false;
+				}
+			
+         //-->
+      </script>
+      
+   </head>
+   
+   <body>
+   
+      <form onclick="handleClick(event)">
+         <img id="myImage" src="C:\Users\jscaria\Desktop\jobinx\Koala.jpg" height="50" width="50"/>
+         <p>Click the buttons below to handle animation</p>
+         
+      </form>
+	  
+	  <input type="button" value="Start" onclick="moveRight();" />
+         <input type="button" value="Stop" onclick="stop();" />
+		
+      
+   </body>
+</html>
