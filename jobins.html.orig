@@ -7,8 +7,11 @@
          <!--
             var imgObj = null;
             var animate ;
+<<<<<<< HEAD
 			var gameOn = false;
 
+=======
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
             
             function init(){
                imgObj = document.getElementById('myImage');
@@ -17,8 +20,11 @@
             }
             
             function moveRight(){
+<<<<<<< HEAD
 			document.getElementById('start').disabled  = true;
 			gameOn = true;
+=======
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
 			
 			if(parseInt(imgObj.style.left)<=200)
 			{clearTimeout(animate);
@@ -45,8 +51,11 @@
 			}
             
             function stop(){
+<<<<<<< HEAD
 			document.getElementById('start').disabled  = false;
 			gameOn=false;
+=======
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
                clearTimeout(animate);
                imgObj.style.left = '0px'; 
             }
@@ -59,6 +68,7 @@
 				return x;
 				}
 				
+<<<<<<< HEAD
 				function handleClick(e){			
 				
 			
@@ -67,6 +77,9 @@
 						return;
 					}
 				
+=======
+				function handleClick(e){
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
 				 var evt = e ? e:window.event;
 				 var clickX=0, clickY=0;
 
@@ -88,6 +101,7 @@
 				  clickY = evt.pageY;
 				 }
 
+<<<<<<< HEAD
 				 document.getElementById("x").value =  clickX;
 				document.getElementById("y").value =  clickY;
 			//	 alert (evt.type.toUpperCase() + ' mouse event:'
@@ -106,6 +120,19 @@
 				document.getElementById("x").value =  "";
 				document.getElementById("y").value =  "";
 			}
+=======
+				 alert (evt.type.toUpperCase() + ' mouse event:'
+				  +'\n pageX = ' + clickX
+				  +'\n pageY = ' + clickY 
+				  +'\n clientX = ' + evt.clientX
+				  +'\n clientY = '  + evt.clientY 
+				  +'\n screenX = ' + evt.screenX 
+				  +'\n screenY = ' + evt.screenY
+				 )
+				 return false;
+				}
+			
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
          //-->
       </script>
       
@@ -114,16 +141,27 @@
    <body>
    
       <form onclick="handleClick(event)">
+<<<<<<< HEAD
          <img id="myImage" src="C:\Users\Jobin\Desktop\yojobin-master\Koala.jpg" height="50" width="50"/>
+=======
+         <img id="myImage" src="C:\Users\jscaria\Desktop\jobinx\Koala.jpg" height="50" width="50"/>
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
          <p>Click the buttons below to handle animation</p>
          
       </form>
 	  
+<<<<<<< HEAD
 	  <input type="button" id="start" value="Start" onclick="moveRight();" />
          <input type="button" id="stop" value="Stop" onclick="stop();" />
 		 <input type="button" id="reset" value="Reset" onclick="reset();" />
 		<br><br>
       x: <input type="text" id="x" value=""><br>
 	  y: <input type="text" id="y" value=""><br>
+=======
+	  <input type="button" value="Start" onclick="moveRight();" />
+         <input type="button" value="Stop" onclick="stop();" />
+		
+      
+>>>>>>> 2e67e1cafcd6e05935887cbabcdbb2ee4d1e4631
    </body>
 </html>
